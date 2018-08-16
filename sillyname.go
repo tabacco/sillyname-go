@@ -3,7 +3,6 @@ package sillyname
 import (
 	"fmt"
 	"math/rand"
-	"strings"
 	"time"
 )
 
@@ -28,7 +27,7 @@ func GenerateSeededStupidName(seed int64) string {
 	noun2 := randomNoun()
 	adjective1 := randomAdjective()
 	adjective2 := randomAdjective()
-	return strings.Title(fmt.Sprintf("%s%s %s%s", noun1, adjective1, adjective2, noun2))
+	return fmt.Sprintf("%s%s-%s%s", noun1, adjective1, adjective2, noun2)
 }
 
 // GenerateStupidName returns a random stupid name every time it's called by seeding the random number generator with the current time.
